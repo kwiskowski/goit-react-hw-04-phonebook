@@ -1,21 +1,24 @@
-import { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import css from './PhonebookFilter.module.css';
 
-export const Filter = () => {
-  const [value, setValue] = useState('');
-
-  const handleInputChange = e => {
-    setValue(e.target.value);
-  };
-
+export function Filter({ value, onChangeFilter }) {
   return (
-    <>
-      <p>Find contacts by name</p>
-      <input onChange={handleInputChange} />
-    </>
+    <div>
+      <label className={css.label}>
+        Find contacts by name
+        <input
+          className={css.input}
+          type="text"
+          value={value}
+          onChange={onChangeFilter}
+        />
+      </label>
+    </div>
   );
-};
+}
 
 Filter.propTypes = {
-  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  onChangeFilter: PropTypes.func.isRequired,
 };
