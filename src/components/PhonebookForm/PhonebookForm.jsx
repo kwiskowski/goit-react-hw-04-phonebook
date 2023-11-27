@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
 import css from './PhonebookForm.module.css';
 import PropTypes from 'prop-types';
 
